@@ -1,0 +1,58 @@
+{
+  "version": "1.0.0",
+  "caso": "ACADS 1(a): talud homogéneo de verificación",
+  "descripcion": "Problema 1(a) del estudio ACADS (Giam y Donald, 1989), con la geometría y los datos del manual de verificación de Rocscience (Slide2, problema 1). Talud 1V:2H de 10 m, sin agua. FS de referencia del estudio: 1.00.",
+  "geometria": {
+    "puntos": [
+      [
+        20.0,
+        25.0
+      ],
+      [
+        30.0,
+        25.0
+      ],
+      [
+        50.0,
+        35.0
+      ],
+      [
+        70.0,
+        35.0
+      ]
+    ]
+  },
+  "material": {
+    "c": 3.0,
+    "phi": 19.6,
+    "gamma": 20.0,
+    "gamma_sat": null
+  },
+  "nivel_freatico": null,
+  "determinista": {
+    "fs_bishop": 0.985038,
+    "fs_fellenius": 0.942321,
+    "fs_bishop_sin_agua": null,
+    "superficie_critica_bishop": {
+      "x_salida": 30.0016,
+      "x_entrada": 51.3151,
+      "psi": 24.213,
+      "xc": 29.5405,
+      "yc": 53.6984,
+      "radio": 28.7012,
+      "fs": 0.985038
+    },
+    "superficie_critica_fellenius": {
+      "x_salida": 30.0016,
+      "x_entrada": 50.9505,
+      "psi": 30.4186,
+      "xc": 31.9608,
+      "yc": 47.8404,
+      "radio": 22.9235,
+      "fs": 0.942321
+    },
+    "dovelas": 100,
+    "circulos_malla": 11660,
+    "circulos_validos": 7988
+  }
+}

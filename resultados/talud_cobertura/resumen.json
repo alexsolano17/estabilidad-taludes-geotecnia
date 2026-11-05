@@ -1,0 +1,152 @@
+{
+  "version": "1.0.0",
+  "caso": "Talud en material de cobertura de un tajo abierto",
+  "descripcion": "Caso de estudio ilustrativo: talud de corte de 20 m en suelo residual / roca muy meteorizada con nivel freático. Los parámetros son supuestos razonables, no ensayos: para un diseño real deben reemplazarse por resultados de laboratorio y campo.",
+  "geometria": {
+    "altura": 20.0,
+    "angulo": 45.0,
+    "largo_pie": 40.0,
+    "largo_corona": 60.0
+  },
+  "material": {
+    "c": 20.0,
+    "phi": 30.0,
+    "gamma": 19.0,
+    "gamma_sat": 20.0
+  },
+  "nivel_freatico": {
+    "altura_en_pie": 0.0,
+    "profundidad_bajo_corona": 5.0,
+    "distancia_tras_corona": 10.0
+  },
+  "determinista": {
+    "fs_bishop": 1.12024,
+    "fs_fellenius": 1.01001,
+    "fs_bishop_sin_agua": 1.22613,
+    "superficie_critica_bishop": {
+      "x_salida": 40.0,
+      "x_entrada": 64.5329,
+      "psi": 39.2204,
+      "xc": 40.0141,
+      "yc": 25.0292,
+      "radio": 25.0292,
+      "fs": 1.12024
+    },
+    "superficie_critica_fellenius": {
+      "x_salida": 31.3721,
+      "x_entrada": 65.6608,
+      "psi": 59.7368,
+      "xc": 42.6815,
+      "yc": 20.0036,
+      "radio": 22.9793,
+      "fs": 1.01001
+    },
+    "dovelas": 100,
+    "circulos_malla": 12160,
+    "circulos_validos": 6697
+  },
+  "probabilistico": {
+    "simulaciones": 20000,
+    "semilla": 2026,
+    "variables": [
+      {
+        "nombre": "c",
+        "distribucion": "lognormal",
+        "media": 20.0,
+        "desviacion": 6.0,
+        "minimo": 0.0
+      },
+      {
+        "nombre": "phi",
+        "distribucion": "normal",
+        "media": 30.0,
+        "desviacion": 3.0,
+        "minimo": 0.0
+      }
+    ],
+    "correlacion_c_phi": -0.5,
+    "superficies_evaluadas": 19,
+    "avisos_bishop": 0,
+    "valores_recortados": 0,
+    "minimo_entre_superficies": {
+      "n": 20000,
+      "media": 1.11909,
+      "desviacion": 0.102141,
+      "minimo": 0.772506,
+      "p05": 0.962675,
+      "p50": 1.11323,
+      "p95": 1.29785,
+      "fallas": 2249,
+      "pf": 0.11245,
+      "pf_ic95": [
+        0.108146,
+        0.116903
+      ],
+      "error_pf": 0.00223389,
+      "beta_normal": 1.16595,
+      "beta_lognormal": 1.1898,
+      "pf_normal": 0.121817,
+      "pf_lognormal": 0.117063
+    },
+    "superficie_critica_fija": {
+      "n": 20000,
+      "media": 1.12321,
+      "desviacion": 0.103355,
+      "minimo": 0.772803,
+      "p05": 0.965828,
+      "p50": 1.11659,
+      "p95": 1.30435,
+      "fallas": 2106,
+      "pf": 0.1053,
+      "pf_ic95": [
+        0.101122,
+        0.10963
+      ],
+      "error_pf": 0.00217039,
+      "beta_normal": 1.19209,
+      "beta_lognormal": 1.21944,
+      "pf_normal": 0.116613,
+      "pf_lognormal": 0.111339
+    },
+    "rosenblueth_superficie_fija": {
+      "media": 1.12307,
+      "desviacion": 0.102005,
+      "puntos": [
+        {
+          "c": 26.0,
+          "phi": 33.0,
+          "peso": 0.125,
+          "fs": 1.32438
+        },
+        {
+          "c": 26.0,
+          "phi": 27.0,
+          "peso": 0.375,
+          "fs": 1.14201
+        },
+        {
+          "c": 14.0,
+          "phi": 33.0,
+          "peso": 0.375,
+          "fs": 1.10417
+        },
+        {
+          "c": 14.0,
+          "phi": 27.0,
+          "peso": 0.125,
+          "fs": 0.921657
+        }
+      ]
+    }
+  },
+  "criterios": {
+    "fs_min": 1.2,
+    "pf_max": 0.2,
+    "descripcion": "Talud interrampa con consecuencia de falla media (Read y Stacey, 2009)"
+  },
+  "cumple": {
+    "fs": false,
+    "pf": true,
+    "global": false
+  }
+}

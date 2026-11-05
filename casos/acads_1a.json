@@ -1,0 +1,13 @@
+{
+  "nombre": "ACADS 1(a): talud homogéneo de verificación",
+  "descripcion": "Problema 1(a) del estudio ACADS (Giam y Donald, 1989), con la geometría y los datos del manual de verificación de Rocscience (Slide2, problema 1). Talud 1V:2H de 10 m, sin agua. FS de referencia del estudio: 1.00.",
+  "geometria": {
+    "puntos": [[20.0, 25.0], [30.0, 25.0], [50.0, 35.0], [70.0, 35.0]]
+  },
+  "y_estrato_firme": 20.0,
+  "material": {
+    "c": 3.0,
+    "phi": 19.6,
+    "gamma": 20.0
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "nombre": "Talud en material de cobertura de un tajo abierto",
+  "descripcion": "Caso de estudio ilustrativo: talud de corte de 20 m en suelo residual / roca muy meteorizada con nivel freático. Los parámetros son supuestos razonables, no ensayos: para un diseño real deben reemplazarse por resultados de laboratorio y campo.",
+  "geometria": {
+    "altura": 20.0,
+    "angulo": 45.0,
+    "largo_pie": 40.0,
+    "largo_corona": 60.0
+  },
+  "material": {
+    "c": 20.0,
+    "phi": 30.0,
+    "gamma": 19.0,
+    "gamma_sat": 20.0
+  },
+  "nivel_freatico": {
+    "altura_en_pie": 0.0,
+    "profundidad_bajo_corona": 5.0,
+    "distancia_tras_corona": 10.0
+  },
+  "probabilistico": {
+    "simulaciones": 20000,
+    "semilla": 2026,
+    "correlacion_c_phi": -0.5,
+    "variables": {
+      "c": {"distribucion": "lognormal", "cov": 0.30},
+      "phi": {"distribucion": "normal", "cov": 0.10}
+    }
+  },
+  "criterios": {
+    "fs_min": 1.2,
+    "pf_max": 0.20,
+    "descripcion": "Talud interrampa con consecuencia de falla media (Read y Stacey, 2009)"
+  }
+}

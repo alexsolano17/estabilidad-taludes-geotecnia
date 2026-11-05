@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "estabilidad-taludes"
+version = "1.0.0"
+description = "Factor de seguridad (Bishop simplificado) y probabilidad de falla (Monte Carlo) de taludes"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "matplotlib>=3.7"]
+
+[project.optional-dependencies]
+pruebas = ["pytest>=7"]
+
+[tool.setuptools]
+packages = ["estabilidad_taludes"]
+
+[tool.ruff]
+line-length = 120
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
